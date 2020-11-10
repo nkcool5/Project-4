@@ -5,10 +5,15 @@ No Due Date but highly Recommended to Complete to learn more on Web Security on 
 In this project you have to retrieve the compressed folder wasec.zip, and  unzip it. You will obtain a directory structure – the top level directory is ‘’wasec’’ and with the wasec directory, you will find 6 folders as follows:
 
 Clickjacking/
+
 Cookies/
+
 Cors/
+
 Hsts/
+
 Sub-resource-integrity/
+
 Xss/
 
 In the top level directory, there is a README file with basic instructions for installation. The instruction basically tells you to configure by editing your /etc/hosts file to add an entry so that without having to run a webserver like nginx or apache or lighthttpd, you can run a web service through node.js.
