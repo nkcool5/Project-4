@@ -3,6 +3,7 @@
 No Due Date but highly Recommended to Complete to learn more on Web Security on the Client Side No Deliverables
 -----------------------
 In this project you have to retrieve the compressed folder wasec.zip, and  unzip it. You will obtain a directory structure – the top level directory is ‘’wasec’’ and with the wasec directory, you will find 6 folders as follows:
+
 Clickjacking/
 Cookies/
 Cors/
@@ -14,6 +15,7 @@ In the top level directory, there is a README file with basic instructions for i
 If you already do not have node.js on your ubuntu machine, please do that using the following steps:
 
 -- sudo apt install node.js
+
 -- sudo apt install npm
 
 Test the version of node.js by typing ‘’nodejs –version’’ and/or ‘’node –version”” on your terminal and check that the version is above 8.x.x at least. 
@@ -43,27 +45,39 @@ Next you move to the HSTS directory.  For this you have to install a locally tru
 How to install mkcert : 
 
 -- sudo apt-get update
+
 -- sudo apt install wget libnss3-tools (if you do not have these installed already)
+
 -- export VER=’’v1.3.0” (I have tested with this version)
+
 -- wget -O mkcert https://github.com/FiloSottile/mkcert/releases/download/${VER}/mkcert-${VER}-linux-amd64 
+
 -- chmod +x mkcert
--- sudo mv mkcert /usr/local/bin
+
+-- sudo mv mkcert /usr/local/bin 
+
 
 Now in the wasec directory do 
+
 -- mkcert –install
+
 Now you are ready to do the experiments by running “node index.js” inside the HSTS/ directory. Read the index.js file to understand what is happening. 
 HSTS is strict transport security – which means that if used – servers will tell browser to not interact over http even if an http link is inside the page. 
 Now use README.md to do the two experiments and using index.js file’s code flow – try to understand how the strict transport security is enforced by redirection. 
 
 Next go to the directory sub-resource-integrity/ -- open README.md file and run the web application by typing “node index.js”. 
 Read about subresource integrity check (SRI) at https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
-In short: 
+
+# In short: 
+
 Subresource Integrity enables you to mitigate some risks of attacks such as this, by ensuring that the files your web application or web document fetches (from a CDN or anywhere) have been delivered without a third-party having injected any additional content into those files — and without any other changes of any kind at all having been made to those files.
+
 You use the Subresource Integrity feature by specifying a base64-encoded cryptographic hash of a resource (file) you’re telling the browser to fetch, in the value of the integrity attribute of any <script> or <link> element.
 
 An integrity value begins with at least one string, with each string including a prefix indicating a particular hash algorithm (currently the allowed prefixes are sha256, sha384, and sha512), followed by a dash, and ending with the actual base64-encoded hash.
 
 After reading about SRI from the above mentioned page, try the experiments in the README.md and also check the index.js file and try to understand how the application is sending the HASH values – in one case that does not match the integrity hash and in another it does. 
+
 Finally go to the directory xss and figure out how X-XSS-Protection header works and how CSP works by reading the index.js file as well as doing the experiments in the README.md. 
 
 
